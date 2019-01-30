@@ -48,34 +48,10 @@ namespace MultiThreading_Assignment.ViewModel
         {
             customersList = new List<Customer>();
             CreateCustomers = new CreateCustomers();
-            //TotalTime = "00:00:00";
 
             InitializeCommands();
             
         }
-
-        //#region StopWatch Timer
-
-        //private DispatcherTimer timer;
-        //private int timeTick;
-
-        //private void InitializeTimer()
-        //{
-        //    timer = new DispatcherTimer();
-        //    timer.Interval = TimeSpan.FromSeconds(1);
-        //    timer.Tick += (object sender, EventArgs e) =>
-        //    {
-        //        timeTick++;
-        //        TotalTime = ConvertToHHMMSSmm(timeTick);
-        //    };
-        //}
-
-        //private string ConvertToHHMMSSmm(int input)
-        //{
-        //    TimeSpan t = TimeSpan.FromSeconds(input);
-        //    return string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
-        //}
-        //#endregion
 
         private void InitializeCommands()
         {
@@ -88,7 +64,7 @@ namespace MultiThreading_Assignment.ViewModel
 
         private void StartOPeration(object obj)
         {
-            if (NoOfCustommers > 0 && NoOfThreads > 0)
+            if (noOfCustommers > 0 && noOfThreads > 0)
             {
                 customersList = CreateCustomers.CustomerCreation(noOfCustommers);
 
@@ -98,7 +74,7 @@ namespace MultiThreading_Assignment.ViewModel
 
                 CreateThreads.ResetAll();
 
-                CreateThreads.CreateAndPerform(NoOfThreads, NoOfCustommers, customersList);
+                CreateThreads.CreateAndPerform(noOfThreads, noOfCustommers, customersList);
 
                 TimerStopWatch.Stop();
             }
@@ -117,14 +93,22 @@ namespace MultiThreading_Assignment.ViewModel
 
         private void Reset(object obj)
         {
-            NoOfThreads = 0; NotifyPropertyChanged("NoOfThreads");
-            NoOfCustommers = 0; NotifyPropertyChanged("NoOfCustommers");
+            if (noOfCustommers > 0 && noOfThreads > 0)
+            {
+                noOfThreads = 0; NotifyPropertyChanged("NoOfThreads");
+                noOfCustommers = 0; NotifyPropertyChanged("NoOfCustommers");
 
-            TimerStopWatch.Reset();
+                TimerStopWatch.Reset();
 
-            customersList.Clear();
+                customersList.Clear();
 
-            CreateThreads.ResetAll();
+                CreateThreads.ResetAll();
+            }
+            else
+            {
+                noOfThreads = 0; NotifyPropertyChanged("NoOfThreads");
+                noOfCustommers = 0; NotifyPropertyChanged("NoOfCustommers");
+            }
         }
 
         private void ExitApplication(object obj)

@@ -34,9 +34,9 @@ namespace MultiThreading_Assignment.Business_Logic
             }
             else  //divide the cust n assign threads
             {
-                List<Customer>[] customersLists = new List<Customer>[NoOfThreads];
+                List<Customer>[] customersLists = new List<Customer>[NoOfThreads];                   //Array of lists for each (thread => one list)
 
-                for (int i = 0; i < NoOfThreads; i++) customersLists[i] = new List<Customer>();
+                for (int i = 0; i < NoOfThreads; i++) customersLists[i] = new List<Customer>();      //
 
                 int tmp = 0;
                 foreach(Customer c in customersList)

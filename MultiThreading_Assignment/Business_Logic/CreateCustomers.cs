@@ -9,7 +9,6 @@ namespace MultiThreading_Assignment.Business_Logic
 {
     public class CreateCustomers
     {
-        Customer customer;
         List<Customer> customersList;
         Random random = new Random();
 
@@ -24,24 +23,24 @@ namespace MultiThreading_Assignment.Business_Logic
             
             for (int i = 1; i <= totalCust; i++)
             {                
-                customersList.Add(new Customer(rndId(), rndTime()));
+                customersList.Add(new Customer(RndId(), RndTime()));
             }
             return customersList;
         }
 
-        private int rndId()
+        private int RndId()
         {
             int? rnd;
-            while ((rnd = getAndCheck()) == null){}
+            while ((rnd = GetAndCheck()) == null){}
             return rnd.Value;
         }
 
-        private int rndTime()
+        private int RndTime()
         {
             return random.Next(1, 5)*1000;
         }
 
-        private int? getAndCheck()
+        private int? GetAndCheck()
         {
             int rnd = random.Next(1000, 9999);
         
