@@ -15,7 +15,6 @@ namespace MultiThreading_Assignment.Business_Logic
 {
     public static class CreateThreads
     {
-
         public static void CreateAndPerform(int NoOfThreads, int NoOfCustommers, List<Customer> customersList)
         {
             StartTimer();
@@ -36,23 +35,20 @@ namespace MultiThreading_Assignment.Business_Logic
             {
                 List<Customer>[] customersLists = new List<Customer>[NoOfThreads];                   //Array of lists for each (thread => one list)
 
-                for (int i = 0; i < NoOfThreads; i++) customersLists[i] = new List<Customer>();      //
+                for (int i = 0; i < NoOfThreads; i++) customersLists[i] = new List<Customer>();      //initializing each list in lists[]
 
                 int tmp = 0;
-                foreach(Customer c in customersList)
+                foreach(Customer c in customersList)                  //Adding one customer to each thread like cards
                 {
                     customersLists[tmp++].Add(c);
                     tmp %= NoOfThreads;
                 }
 
-                for (int i = 0; i < NoOfThreads; i++) Create(customersLists[i]);
+                for (int i = 0; i < NoOfThreads; i++) Create(customersLists[i]);      //Creating threads for no of threads
 
                 CreateWatcherThread(NoOfThreads);
                 DisplayPopup();
             }
-
-            
-            
         }
 
         #region Thread creation
@@ -96,7 +92,7 @@ namespace MultiThreading_Assignment.Business_Logic
             thread.Start();
         }
 
-        public static void CreateWatcherThread(int MaxThreads)
+        public static void CreateWatcherThread(int MaxThreads)   //Creating watcher thread to check all threads are completed or not & then stopping the stopwatch
         {
             Thread thread = new Thread(() =>
             {

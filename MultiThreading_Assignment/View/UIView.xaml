@@ -31,15 +31,16 @@
         <Label Content="No. of custommers  :" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Content="No. of Threads  :" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBox Text="{Binding NoOfCustommers, Mode=TwoWay}" 
+        <TextBox Text="{Binding NoOfCustommers, Mode=TwoWay}"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="No. of Customers" 
                  HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="0" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White"/>
         <TextBox Text="{Binding NoOfThreads, Mode=TwoWay}"    
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="No. of Threads" 
                  HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White"/>
 
-        <TextBlock Name="TotalTime" ToolTip="Total time taken by threads to Perform"
-                   Text="00:00:00" TextAlignment="Center" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="100" 
+        <TextBox Name="TotalTime" ToolTip="Total time taken by Popup Window" IsReadOnly="True"
+                   Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Time for which Popup Window was open"
+                   Text="00:00:00" TextAlignment="Center" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="200" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Background="#FFF1F1F1"/>
 
         <Button Content="Start"     Command="{Binding StartOP}"  
