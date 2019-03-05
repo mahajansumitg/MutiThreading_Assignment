@@ -68,21 +68,11 @@ namespace MultiThreading_Assignment.ViewModel
             {
                 customersList = CreateCustomers.CustomerCreation(noOfCustommers);
 
-                TimerStopWatch.InitializeTimer();
-                TimerStopWatch.Reset();
-                TimerStopWatch.Start();
-
                 CreateThreads.ResetAll();
 
                 CreateThreads.CreateAndPerform(noOfThreads, noOfCustommers, customersList);
-
-                TimerStopWatch.Stop();
             }
-            else
-            {
-                MessageBox.Show("No of threads & no of customers should be greater than zero.");
-            }
-
+            else MessageBox.Show("No of threads & no of customers should be greater than zero.");
         }
 
         private bool CanPerform(object arg)
@@ -97,8 +87,6 @@ namespace MultiThreading_Assignment.ViewModel
             {
                 noOfThreads = 0; NotifyPropertyChanged("NoOfThreads");
                 noOfCustommers = 0; NotifyPropertyChanged("NoOfCustommers");
-
-                TimerStopWatch.Reset();
 
                 customersList.Clear();
 

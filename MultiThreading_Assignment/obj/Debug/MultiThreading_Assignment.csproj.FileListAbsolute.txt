@@ -45,3 +45,7 @@ C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThr
 C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\bin\Debug\MaterialDesignColors.pdb
 C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\obj\Debug\App.baml
 C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\obj\Debug\MultiThreading_Assignment.csprojAssemblyReference.cache
+C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\bin\Debug\MultiThreading_Assignment.exe.manifest
+C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\bin\Debug\MultiThreading_Assignment.application
+C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\obj\Debug\MultiThreading_Assignment.exe.manifest
+C:\Users\sumit_mahajan\Downloads\All_Projects\MultiThreading_Assignment\MultiThreading_Assignment\obj\Debug\MultiThreading_Assignment.application

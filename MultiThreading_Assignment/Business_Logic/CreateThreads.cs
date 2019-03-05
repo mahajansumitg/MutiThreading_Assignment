@@ -108,8 +108,10 @@ namespace MultiThreading_Assignment.Business_Logic
         public static void DisplayPopup()
         {
             MainWindow.Opacity = 0.5;
-            OutputWindow_View = new OutputWindow_View();
-            OutputWindow_View.Owner = MainWindow;
+            OutputWindow_View = new OutputWindow_View
+            {
+                Owner = MainWindow
+            };
             OutputWindow_View.ShowDialog();
         }
 
@@ -120,14 +122,14 @@ namespace MultiThreading_Assignment.Business_Logic
             switch (type.Name.ToString())
             {
                 case "Int32":
-                    OutputWindow_View.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal,new Action(
+                    OutputWindow_View.Dispatcher.BeginInvoke(DispatcherPriority.Normal,new Action(
                         delegate() 
                         {
                             OutputWindow_View.TotalThreads.Text = obj.ToString();
                         }));
                     break;
                 case "Customer":
-                    OutputWindow_View.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(
+                    OutputWindow_View.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(
                         delegate ()
                         {
                             OutputWindow_View.listViewList.Add(obj as Customer);

@@ -26,7 +26,7 @@ namespace MultiThreading_Assignment.Business_Logic
                 uIView.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(
                             delegate ()
                             {
-                                uIView.TotalTime.Text = ConvertToHHMMSSmm(timeTick);
+                                //uIView.TotalTime.Text = ConvertToHHMMSSmm(timeTick);
                             }));
             };
         }
@@ -49,7 +49,7 @@ namespace MultiThreading_Assignment.Business_Logic
             timer.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(
                             delegate ()
                             {
-                                uIView.TotalTime.Text = ConvertToHHMMSSmm(timeTick);
+                                //uIView.TotalTime.Text = ConvertToHHMMSSmm(timeTick);
                             }));
         }
 
@@ -59,9 +59,10 @@ namespace MultiThreading_Assignment.Business_Logic
             uIView.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(
                             delegate ()
                             {
-                                uIView.TotalTime.Text = "00:00:00";
+                                //uIView.TotalTime.Text = "00:00:00";
                             }));
             timeTick = 0;
         }
+    }{
     }
 }

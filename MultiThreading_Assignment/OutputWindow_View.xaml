@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:MultiThreading_Assignment.View"
         mc:Ignorable="d"
-        Title="OutputWindow_View" Height="350" Width="700" WindowStartupLocation="CenterOwner" WindowStyle="None" ResizeMode="NoResize" BorderThickness="3" Background="#FFB3C9A9">
+        Title="OutputWindow_View" Height="350" Width="700" WindowStartupLocation="CenterOwner" WindowStyle="None" ResizeMode="NoResize" BorderThickness="1" Background="#FF919191">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -21,8 +21,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Total time  :" Width="100" Height="30" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Name="TotalTime" ToolTip="Total time required to perform operation" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
+            <Label Content="Total time  :" Width="100" Height="30" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+            <TextBlock Name="TotalTime" ToolTip="Total time required to handle all customers" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -31,7 +31,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label Content="Total threads completed  :" Width="150" Height="30" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="Total threads completed  :" Width="150" Height="30" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
             <TextBlock Name="TotalThreads" ToolTip="Total threads completed" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
         </Grid>
 
@@ -41,8 +41,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <ListView Name="listView" Grid.Column="0" HorizontalAlignment="Center" Width="Auto" Height="Auto" materialDesign:ListViewAssist.ListViewItemPadding="2"
-                      Background="#FFCBCBCB" BorderThickness="3" BorderBrush="Black">
+            <ListView Name="listView" Grid.Column="0" HorizontalAlignment="Center" Width="Auto" Height="Auto"  materialDesign:ListViewAssist.ListViewItemPadding="2" Background="#FFCBCBCB" BorderThickness="3" BorderBrush="Black" Foreground="Black">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Customer_Id" DisplayMemberBinding="{Binding ID}"/>
@@ -62,16 +61,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Label Content="Cust. Accepted  :" Width="100" Height="30" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Label Content="Cust. Rejected  :" Width="100" Height="30" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="Customers Accepted  :" Width="100" Height="30" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+                <Label Content="Customers Rejected  :" Width="100" Height="30" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
 
-                <TextBlock Name="Accepted" ToolTip="Accepted no of customers" Width="100" Height="30" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
-                <TextBlock Name="Rejected" ToolTip="Rejected no of customers" Width="100" Height="30" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
+                <TextBlock Name="Accepted" ToolTip="Total number of customers accepted" Width="100" Height="30" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
+                <TextBlock Name="Rejected" ToolTip="Total no of customers rejected" Width="100" Height="30" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFCBCBCB"/>
             </Grid>
         </Grid>
 
         <Button
-            Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000"
+            Style="{StaticResource MaterialDesignRaisedButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000" ToolTip="Close the output window"
             Grid.Row="3" Content="Close" Click="CloseOutputWindow" Height="30" Width="100"/>
     </Grid>
 </Window>
