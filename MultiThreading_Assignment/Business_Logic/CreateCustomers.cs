@@ -12,7 +12,6 @@ namespace MultiThreading_Assignment.Business_Logic
         List<Customer> customersList;
         Random random = new Random();
 
-
         public CreateCustomers()
         {
             customersList = new List<Customer>();

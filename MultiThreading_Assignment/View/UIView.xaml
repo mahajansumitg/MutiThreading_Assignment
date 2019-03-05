@@ -33,22 +33,12 @@
         <Label Content="No. of custommers  :" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
         <Label Content="No. of Threads  :" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
 
-        <TextBox Text="{Binding NoOfCustommers, Mode=TwoWay}"
-                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="No. of Customers" 
-                 HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White"/>
-        <TextBox Text="{Binding NoOfThreads, Mode=TwoWay}"    
-                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="No. of Threads" 
-                 HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White"/>
+        <TextBox Text="{Binding NoOfCustommers, Mode=TwoWay}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="No. of Customers" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White"/>
+        <TextBox Text="{Binding NoOfThreads, Mode=TwoWay}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="No. of Threads" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White"/>
 
-        <Button Content="Start"     Command="{Binding StartOP}"  
-                Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000"
-                Grid.Column="0" Grid.Row="3" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Reset All" Command="{Binding ResetAll}" 
-                Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000"
-                Grid.Column="1" Grid.Row="3" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Exit"      Command="{Binding ExitApp}"  
-                Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000"
-                Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Start" Command="{Binding StartOP}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000" Grid.Column="0" Grid.Row="3" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Reset All" Command="{Binding ResetAll}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000" Grid.Column="1" Grid.Row="3" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Exit" Command="{Binding ExitApp}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:RippleAssist.Feedback="#DD000000" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     </Grid>
 
